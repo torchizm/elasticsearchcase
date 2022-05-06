@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+html, body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--gray-1);
+}
+
+.App {
+  max-width: 768px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  padding: 2rem;
+}
+
+.interaction {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.user {
+  position: relative;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.user span {
+  font-size: 14px;
+}
+
+.user .field {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+}
+
+.user .field div:nth-child(2) {
+  flex: 1;
+}
+
+.name-fields {
+  display: flex;
+  gap: 4px;
+}
+
+.user img {
+  border-radius: 1rem;
+  object-fit: cover;
+}
+
+.score {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+}
+
+.dates {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+.dates span {
+  font-size: 12px;
+}
+
+.user:nth-child(odd) {
+  border-radius: 1rem;
+  background-color: var(--gray-5);
+}
+
+.user:nth-child(even) {
+  border-radius: 1rem;
+  background-color: var(--gray-2);
+}

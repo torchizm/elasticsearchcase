@@ -1,0 +1,40 @@
+.button {
+  --foreground: var(--gray-1);
+  --foreground-gray: var(--gray-2);
+  --background: var(--gray-4);
+  --background-gray: var(--gray-3);
+  --hover: var(--blue-2);
+  --active: var(--blue-1);
+  --border: var(--blue-1);
+  --border-hover: var(--blue-2);
+  --input-radius: calc(var(--border-radius) / 2);
+
+}
+
+.dropdown {
+  width: 100%;
+}
+
+.dropdown select {
+  width: 100%;
+  font-family: Poppins, "sans-serif";
+  padding: 0.75rem 1rem;
+  background-color: #c2c2c2;
+  border-radius: 0.25rem;
+  border-bottom: 2px solid var(--blue-1);
+}
+
+.dropdown select:focus {
+  background-color: var(--white);
+}
+
+.dropdown select:after {
+  position: absolute;
+  content: "";
+  top: 14px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-color: #fff transparent transparent transparent;
+}

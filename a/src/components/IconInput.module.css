@@ -1,0 +1,62 @@
+.icon-input {
+  --foreground: var(--gray-1);
+  --foreground-gray: var(--gray-2);
+  --background: var(--gray-4);
+  --background-gray: var(--gray-3);
+  --border: var(--blue-1);
+  --border-hover: var(--blue-2);
+  --input-radius: calc(var(--border-radius) / 2);
+}
+
+.icon-input {
+  flex: 1;
+  padding-right: 2.5rem;
+  position: relative;
+}
+
+.icon-input > input {
+  font-family: Poppins;
+  color: var(--foreground);
+  padding: 0.75rem 0.5rem;
+  font-size: 1rem;
+  border: none;
+  background-color: var(--background);
+  border-bottom: 2px solid var(--border);
+  outline: none;
+  border-radius: var(--input-radius) var(--input-radius) 0 0;
+  transition: background-color 50ms ease-in-out;
+  width: 100%;
+}
+
+.icon-input > input:focus {
+  background-color: var(--background-gray);
+}
+
+.icon-input[position="left"] > input {
+  padding-left: 2rem;
+}
+
+.icon-input[position="right"] > input {
+  padding-right: 2rem;
+}
+
+.icon-input > input::placeholder {
+  color: var(--foreground-gray);
+  font-family: Poppins;
+  user-select: none;
+}
+
+.icon-input > svg {
+  pointer-events: none;
+  color: var(--foreground-gray);
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.icon-input[position="left"] > svg {
+  left: 1rem;
+}
+.icon-input[position="right"] > svg {
+  right: 0.2rem;
+}
