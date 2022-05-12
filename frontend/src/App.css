@@ -63,8 +63,9 @@ html, body {
 
 .dates {
   display: flex;
-  justify-content: flex-end;
-  gap: 1rem;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-bottom: 1rem;
 }
 
 .dates span {
@@ -79,4 +80,14 @@ html, body {
 .user:nth-child(even) {
   border-radius: 1rem;
   background-color: var(--gray-2);
+}
+
+.title-field span {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.author-field span {
+  font-weight: bold;
+  font-size: 18px;
 }

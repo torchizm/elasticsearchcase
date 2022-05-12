@@ -36,9 +36,6 @@ app.get("/push", async (req: Request, res: Response) => {
 
 type QueryParams = {
   query: string;
-  searchField: string;
-  order: string;
-  orderType: string;
 };
 
 app.get(
@@ -46,7 +43,7 @@ app.get(
   async (req: Request<null, null, null, QueryParams>, res: Response) => {
     if (req.query.query === "") {
       return api
-        .get("sampledata/_search?size=50")
+        .get("articles/_search?size=10")
         .then((data) => {
           return res.json(data.data);
         })
@@ -56,23 +53,18 @@ app.get(
     let query: any = {
       data: {
         query: {
-          match: {},
+          match: {
+            description: {
+              query: req.query.query,
+            },
+          },
         },
         sort: {},
       },
     };
 
-    query.data.query.match[req.query.searchField] = {
-      query: req.query.query,
-      fuzziness: "2",
-    };
-
-    query.data.sort[req.query.order] = {
-      order: req.query.orderType,
-    };
-
     api
-      .get("sampledata/_search?size=50", query)
+      .get("articles/_search?size=10", query)
       .then((data) => {
         return res.json(data.data);
       })
